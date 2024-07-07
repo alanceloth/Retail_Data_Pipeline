@@ -25,7 +25,7 @@ from airflow.models.baseoperator import chain
     tags=['retail'],
 )
 def retail():
-
+    bucket_name = 'alanceloth_online_retail'
     @task.external_python(python='/usr/local/airflow/pandas_venv/bin/python')
     def correct_csv_format():
         import pandas as pd
@@ -41,7 +41,7 @@ def retail():
         task_id='upload_retail_csv_to_gcs',
         src='include/datasets/online_retail_dataset.csv',
         dst='raw/online_retail.csv',
-        bucket='alanceloth_online_retail',
+        bucket=bucket_name,
         gcp_conn_id='gcp',
         mime_type='text/csv',
     )
@@ -50,7 +50,7 @@ def retail():
         task_id='upload_country_csv_to_gcs',
         src='include/datasets/country.csv',
         dst='raw/country.csv',
-        bucket='alanceloth_online_retail',
+        bucket=bucket_name,
         gcp_conn_id='gcp',
         mime_type='text/csv',
     )
@@ -64,7 +64,7 @@ def retail():
     retail_gcs_to_raw = aql.load_file(
         task_id='retail_gcs_to_raw',
         input_file=File(
-            'gs://alanceloth_online_retail/raw/online_retail.csv',
+            f'gs://{bucket_name}/raw/online_retail.csv',
             conn_id='gcp',
             filetype=FileType.CSV,
         ),
@@ -82,7 +82,7 @@ def retail():
     country_gcs_to_raw = aql.load_file(
         task_id='country_gcs_to_raw',
         input_file=File(
-            'gs://alanceloth_online_retail/raw/online_retail.csv',
+            f'gs://{bucket_name}/raw/online_retail.csv',
             conn_id='gcp',
             filetype=FileType.CSV,
         ),
