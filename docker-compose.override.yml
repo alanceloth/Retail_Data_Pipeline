@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  metabase:
+    image: metabase/metabase:v0.46.6.4
+    volumes:
+      - ./include/metabase-data:/metabase-data
+    environment:
+      - MB_DB_FILE=/metabase-data/metabase.db
+    ports:
+      - 3000:3000
+    restart: always

@@ -1,0 +1,4 @@
+# Astro Runtime includes the following pre-installed providers packages: https://docs.astronomer.io/astro/runtime-image-architecture#provider-packages
+google-cloud-bigquery-storage
+astronomer-cosmos[dbt-bigquery]==1.0.3
+protobuf==3.20.0

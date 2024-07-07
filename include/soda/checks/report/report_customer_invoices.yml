@@ -1,0 +1,7 @@
+checks for report_customer_invoices:
+  # Check fails if the country column has any missing values
+  - missing_count(country) = 0:
+      name: All customers have a country
+  # Check fails if the total invoices is lower or equal to 0
+  - min(total_invoices):
+      fail: when <= 0

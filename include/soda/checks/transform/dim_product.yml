@@ -1,0 +1,19 @@
+checks for dim_product:
+  # Check fails when product_key or english_product_name is missing, OR
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: [product_id, description, price]
+        when wrong column type:
+          product_id: string
+          description: string
+          price: float64
+  # Check fails when customer_id is not unique
+  - duplicate_count(product_id) = 0:
+      name: All products are unique
+  # Check fails when any NULL values exist in the column
+  - missing_count(product_id) = 0:
+      name: All products have a key
+  # Check fails when any prices are negative
+  - min(price):
+      fail: when < 0

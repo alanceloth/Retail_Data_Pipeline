@@ -1,0 +1,20 @@
+checks for dim_datetime:
+  # Check fails when product_key or english_product_name is missing, OR
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: [datetime_id, datetime]
+        when wrong column type:
+          datetime_id: string
+          datetime: datetime 
+  # Check failes when weekday is not in range 0-6
+  - invalid_count(weekday) = 0:
+      name: All weekdays are in range 0-6
+      valid min: 0
+      valid max: 6
+  # Check fails when customer_id is not unique
+  - duplicate_count(datetime_id) = 0:
+      name: All datetimes are unique
+  # Check fails when any NULL values exist in the column
+  - missing_count(datetime_id) = 0:
+      name: All datetimes have a key
