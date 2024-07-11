@@ -6,4 +6,4 @@ sources:
 
     tables:
         - name: raw_invoices
-        - name: country
+        - name: raw_country
