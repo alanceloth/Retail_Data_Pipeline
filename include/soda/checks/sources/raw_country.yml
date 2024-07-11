@@ -1,0 +1,12 @@
+checks for raw_country:
+  - schema:
+      fail:
+        when required column missing: [id, iso, name, nicename, iso3, numcode, phonecode]
+        when wrong column type:
+          id: integer
+          iso: string
+          name: string
+          nicename: string
+          iso3: string
+          numcode: integer
+          phonecode: integer

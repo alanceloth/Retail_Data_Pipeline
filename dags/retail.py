@@ -87,7 +87,7 @@ def retail():
             filetype=FileType.CSV,
         ),
         output_table=Table(
-            name='raw_invoices',
+            name='raw_country',
             conn_id='gcp',
             metadata=Metadata(schema='retail')
         ),
