@@ -10,4 +10,4 @@ SELECT
     t.*,
 	cm.iso
 FROM customer_cte t
-LEFT JOIN {{ source('retail', 'country') }} cm ON t.country = cm.nicename
+LEFT JOIN {{ source('retail', 'raw_country') }} cm ON t.country = cm.nicename
