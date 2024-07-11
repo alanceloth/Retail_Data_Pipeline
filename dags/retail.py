@@ -82,7 +82,7 @@ def retail():
     country_gcs_to_raw = aql.load_file(
         task_id='country_gcs_to_raw',
         input_file=File(
-            f'gs://{bucket_name}/raw/online_retail.csv',
+            f'gs://{bucket_name}/raw/country.csv',
             conn_id='gcp',
             filetype=FileType.CSV,
         ),
