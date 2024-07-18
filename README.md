@@ -1,5 +1,7 @@
 # Data Engineer Project: Retail Data Pipeline
 
+![image](docs/images/Retail%20Data%20Pipeline.png)
+
 *Using Airflow, BigQuery, Google Cloud Storage, dbt, Soda, Metabase and Python*
 
 ## Objective
