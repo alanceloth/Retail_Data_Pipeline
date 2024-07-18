@@ -133,9 +133,9 @@ Connect the database, and it's all set.
 
 ### Contact
 If you have questions feel free to ask me.
-[LinkedIn](https://www.linkedin.com/in/alanlanceloth/)
-[GitHub](https://github.com/alanceloth/)
-[alan.lanceloth@gmail.com]()
+- [LinkedIn](https://www.linkedin.com/in/alanlanceloth/)
+- [GitHub](https://github.com/alanceloth/)
+- [alan.lanceloth@gmail.com](mailto:alan.lanceloth@gmail.com)
 
 ### References
 Project based on [Marc Lamberti](https://www.youtube.com/@MarcLamberti) videos.
