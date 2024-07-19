@@ -2,6 +2,8 @@
 
 ![image](docs/images/Retail%20Data%20Pipeline.png)
 
+[Youtube Live demo](https://www.youtube.com/watch?v=NP08fHker5U)
+
 *Using Airflow, BigQuery, Google Cloud Storage, dbt, Soda, Metabase and Python*
 
 ## Objective
